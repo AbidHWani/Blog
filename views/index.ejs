@@ -1,0 +1,30 @@
+<%- include("partials/header"); -%>
+
+    <main>
+      <ul id="postsList" class="blog-posts text-black">
+        <% posts.forEach(post=> { %>
+          <li class="blog-post">
+            <h2 class="post-title">
+              <%= post.title %>
+            </h2>
+            <p class="post-excerpt">
+              <%= post.content.substring(0, 500) + "..." %><a class="readmore" href="/posts/<%= post.id %>">Read
+                  more</a>
+            </p>
+            <div class="post-meta">
+              <small class="post-author">By <%= post.author %></small>
+              <small class="post-date">
+                <%= new Date(post.date).toDateString() %>
+              </small>
+            </div>
+            <div class="post-actions">
+              <a class="edit" href="/edit/<%= post.id %>">Edit</a>
+              <a class="delete" href="/posts/delete/<%= post.id %>">Delete</a>
+            </div>
+          </li>
+          <% }); %>
+      </ul>
+    </main>
+  </body>
+
+  <%- include("partials/footer"); -%>

@@ -1,0 +1,14 @@
+<%- include("partials/header"); -%>
+
+<main class="post">
+  <article class="post-content">
+    <h1 class="post-title"><%= title %></h1>
+    <p class="post-date">Published on: <%= new Date().toDateString() %></p>
+    <div class="post-text">
+      <%= content %>
+    </div>
+  </article>
+</main>
+
+<%- include("partials/footer"); -%>
+
